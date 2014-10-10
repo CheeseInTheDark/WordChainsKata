@@ -1,18 +1,19 @@
 package wordchains.integration;
 
 import static org.junit.Assert.*;
+import static wordchains.hijacker.NewLine.newLine;
 import junit.framework.Assert;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import wordchains.hijacker.ConsoleHijacker;
+import wordchains.hijacker.NewLine;
 import wordchains.main.WordChains;
 
 public class WordChainsIntegrationTest
 {
-	private final String newLine = System.getProperty("line.separator");
-	
 	private ConsoleHijacker console;
 	
 	@Before
