@@ -2,23 +2,13 @@ package wordchains.solver;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.verify;
 import static wordchains.hijacker.NewLine.newLine;
 
-import java.util.List;
-
-import org.hamcrest.Matchers;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 
 import wordchains.hijacker.ConsoleHijacker;
-import wordchains.hijacker.NewLine;
 
 public class WordChainTest
 {

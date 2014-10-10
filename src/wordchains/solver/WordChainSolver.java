@@ -2,7 +2,7 @@ package wordchains.solver;
 
 public class WordChainSolver
 {
-	private WordChainBuilder wordChainBuilder;
+	private WordChainBuilder wordChainBuilder = new WordChainBuilder();
 
 	public void solve(String start, String end)
     {

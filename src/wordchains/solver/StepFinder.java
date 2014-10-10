@@ -4,9 +4,9 @@ import java.util.List;
 
 public class StepFinder
 {
-	private LetterSubstituter substituter;
+	private LetterSubstituter substituter = new LetterSubstituter();
 	
-	private WordVerifier verifier;
+	private WordVerifier verifier = new WordVerifier();
 	
 	public String getNextStep(String word, String goal)
     {
