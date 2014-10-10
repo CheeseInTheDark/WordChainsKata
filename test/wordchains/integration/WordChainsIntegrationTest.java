@@ -1,9 +1,11 @@
 package wordchains.integration;
 
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 import static wordchains.hijacker.NewLine.newLine;
 import junit.framework.Assert;
 
+import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,7 +37,7 @@ public class WordChainsIntegrationTest
 		
 		WordChains.main(arguments);
 		
-		assertEquals("dog" + newLine, console.getOutput());
+		assertSolutionIs("dog");
 	}
 	
 	@Test
@@ -45,7 +47,7 @@ public class WordChainsIntegrationTest
 		
 		WordChains.main(arguments);
 		
-		assertEquals("cat" + newLine, console.getOutput());
+		assertSolutionIs("cat");
 	}
 	
 	@Test
@@ -55,7 +57,7 @@ public class WordChainsIntegrationTest
 		
 		WordChains.main(arguments);
 		
-		assertEquals("cat" + newLine + "cot" + newLine, console.getOutput());
+		assertSolutionIs("cat", "cot");
 	}
 	
 	@Test
@@ -65,6 +67,34 @@ public class WordChainsIntegrationTest
 		
 		WordChains.main(arguments);
 		
-		assertEquals("cat" + newLine + "cot" + newLine + "cod" + newLine, console.getOutput());
+		assertSolutionIs("cat", "cot", "cod");
+	}
+	
+	@Test
+	public void shouldSolveCatToDot()
+	{
+		String[] arguments = {"cat", "rod"};
+		
+		WordChains.main(arguments);
+		
+		assertSolutionIs("cat", "cot", "rot", "rod");
+	}
+	
+	private void assertSolutionIs(String... steps)
+	{
+		String expectedSolution = asSolution(steps);
+		assertThat(console.getOutput(), is(expectedSolution));
+	}
+	
+	private String asSolution(String... steps)
+	{
+		String solution = new String();
+		
+		for (String step : steps)
+		{
+			solution += step + newLine;
+		}
+		
+		return solution;
 	}
 }

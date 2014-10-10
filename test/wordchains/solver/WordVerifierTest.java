@@ -3,6 +3,8 @@ package wordchains.solver;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.io.File;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,5 +48,17 @@ public class WordVerifierTest
 	public void shouldVerifyDog()
 	{
 		assertTrue(underTest.wordExists("dog"));
+	}
+	
+	@Test
+	public void shouldVerifyRod()
+	{
+		assertTrue(underTest.wordExists("rod"));
+	}
+	
+	@Test
+	public void shouldVerifyRot()
+	{
+		assertTrue(underTest.wordExists("rot"));
 	}
 }

@@ -13,6 +13,8 @@ public class WordVerifier
 		words.add("cot");
 		words.add("cod");
 		words.add("dog");
+		words.add("rod");
+		words.add("rot");
 	}
 	
 	public boolean wordExists(String word)
